@@ -33,7 +33,7 @@
               <Component id="btnCreatePerson" linkSize="2" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnManagePeople" linkSize="2" min="-2" pref="34" max="-2" attributes="0"/>
-              <EmptySpace pref="405" max="32767" attributes="0"/>
+              <EmptySpace pref="525" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

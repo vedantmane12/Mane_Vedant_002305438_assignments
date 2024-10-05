@@ -5,6 +5,7 @@
 package ui;
 
 import java.awt.CardLayout;
+import java.util.Date;
 import model.Address;
 import model.PersonProfile;
 import model.PersonDirectory;
@@ -42,6 +43,7 @@ public class MainJFrame extends javax.swing.JFrame {
     
     private Address hAdd6;
     private Address wAdd6;
+    
     /**
      * Creates new form MainJFrame
      */
@@ -85,7 +87,7 @@ public class MainJFrame extends javax.swing.JFrame {
         // Add Addresses for Person 
         this.hAdd6 = new Address();
         this.wAdd6 = new Address();
-
+        
         generateDemoData();
     }
 
@@ -104,7 +106,6 @@ public class MainJFrame extends javax.swing.JFrame {
         userProcessContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 600));
 
         splitPane.setDividerLocation(80);
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
@@ -147,7 +148,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         pack();
@@ -208,12 +209,17 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void generateDemoData() {
         
+        Date date =  new Date();
+
         // Adding Person 1
         
         p1.setFirstName("Vedant");
         p1.setLastName("Mane");
         p1.setSSN(987654321);
         p1.setAge(25);
+        p1.setHeight(5.8);
+        p1.setWeight(75.0);
+        p1.setLastUpdated(date);
         
         hAdd1.setStreetAddress("30 South Huntington Avenue");
         hAdd1.setUnitNumber(3);
@@ -240,6 +246,9 @@ public class MainJFrame extends javax.swing.JFrame {
         p2.setLastName("Mitra");
         p2.setSSN(976798320);
         p2.setAge(24);
+        p2.setHeight(5.6);
+        p2.setWeight(65.0);
+        p2.setLastUpdated(date);
         
         hAdd2.setStreetAddress("890 Huntington Avenue");
         hAdd2.setUnitNumber(2);
@@ -265,6 +274,9 @@ public class MainJFrame extends javax.swing.JFrame {
         p3.setLastName("Kamble");
         p3.setSSN(692406249);
         p3.setAge(24);
+        p3.setHeight(5.4);
+        p3.setWeight(70.0);
+        p3.setLastUpdated(date);
         
         hAdd3.setStreetAddress("Harvard Square");
         hAdd3.setUnitNumber(7);
@@ -291,6 +303,9 @@ public class MainJFrame extends javax.swing.JFrame {
         p4.setLastName("Marley");
         p4.setSSN(163802688);
         p4.setAge(54);
+        p4.setHeight(6.1);
+        p4.setWeight(80.0);
+        p4.setLastUpdated(date);
         
         hAdd4.setStreetAddress("100 Mozart Park");
         hAdd4.setUnitNumber(10);
@@ -316,6 +331,9 @@ public class MainJFrame extends javax.swing.JFrame {
         p5.setLastName("Swift");
         p5.setSSN(923688263);
         p5.setAge(35);
+        p5.setHeight(5.7);
+        p5.setWeight(62.0);
+        p5.setLastUpdated(date);
         
         hAdd5.setStreetAddress("32 South Huntington");
         hAdd5.setUnitNumber(3);
@@ -342,6 +360,9 @@ public class MainJFrame extends javax.swing.JFrame {
         p6.setLastName("Martin");
         p6.setSSN(638290172);
         p6.setAge(42);
+        p6.setHeight(5.9);
+        p6.setWeight(71.0);
+        p6.setLastUpdated(date);
         
         hAdd6.setStreetAddress("28 Huntington Avenue");
         hAdd6.setUnitNumber(1);

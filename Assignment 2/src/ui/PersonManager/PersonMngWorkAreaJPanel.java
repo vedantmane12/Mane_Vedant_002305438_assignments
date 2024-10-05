@@ -78,7 +78,7 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(btnCreatePerson, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnManagePeople, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(405, Short.MAX_VALUE))
+                .addContainerGap(525, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCreatePerson, btnManagePeople});
@@ -87,6 +87,13 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnCreatePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatePersonActionPerformed
         // TODO add your handling code here:
+        
+        CreatePersonJPanel panel = new CreatePersonJPanel(userProcessContainer, peopleDirectory);
+        userProcessContainer.add("CreateAccountJPanel", panel);
+        
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);        
+        
     }//GEN-LAST:event_btnCreatePersonActionPerformed
 
     private void btnManagePeopleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePeopleActionPerformed
