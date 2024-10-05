@@ -4,17 +4,48 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+import model.Address;
+import model.PersonProfile;
+import model.PersonDirectory;
+import ui.PersonManager.PersonMngWorkAreaJPanel;
+
 /**
  *
  * @author vedant
  */
 public class MainJFrame extends javax.swing.JFrame {
+    
+    private PersonDirectory peopleDirectory;
 
+    private PersonProfile p1;
+    private PersonProfile p2;
+    private PersonProfile p3;
+    private PersonProfile p4;
+    private PersonProfile p5;
+    
+    private Address hAdd1;
+    private Address wAdd1;
+    
+    private Address hAdd2;
+    private Address wAdd2;
+    
+    private Address hAdd3;
+    private Address wAdd3;
+    
+    private Address hAdd4;
+    private Address wAdd4;
+    
+    private Address hAdd5;
+    private Address wAdd5;
+    
     /**
      * Creates new form MainJFrame
      */
     public MainJFrame() {
         initComponents();
+        this.peopleDirectory = new PersonDirectory();
+        generateDemoData();
     }
 
     /**
@@ -26,21 +57,71 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        splitPane = new javax.swing.JSplitPane();
+        topJPanel = new javax.swing.JPanel();
+        btnPersonMng = new javax.swing.JButton();
+        userProcessContainer = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(900, 600));
+
+        splitPane.setDividerLocation(80);
+        splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        btnPersonMng.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        btnPersonMng.setText("Open Person Manager Work Area");
+        btnPersonMng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPersonMngActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout topJPanelLayout = new javax.swing.GroupLayout(topJPanel);
+        topJPanel.setLayout(topJPanelLayout);
+        topJPanelLayout.setHorizontalGroup(
+            topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topJPanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(btnPersonMng, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(541, Short.MAX_VALUE))
+        );
+        topJPanelLayout.setVerticalGroup(
+            topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topJPanelLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(btnPersonMng, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
+        );
+
+        splitPane.setTopComponent(topJPanel);
+
+        userProcessContainer.setLayout(new java.awt.CardLayout());
+        splitPane.setRightComponent(userProcessContainer);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(splitPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPersonMngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonMngActionPerformed
+        // TODO add your handling code here:
+
+        PersonMngWorkAreaJPanel panel = new PersonMngWorkAreaJPanel(userProcessContainer, peopleDirectory);
+        userProcessContainer.add("AccountMngWorkAreaJPanel", panel);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+
+    }//GEN-LAST:event_btnPersonMngActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +159,65 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPersonMng;
+    private javax.swing.JSplitPane splitPane;
+    private javax.swing.JPanel topJPanel;
+    private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables
+
+    private void generateDemoData() {
+        
+        // Adding Person 1
+        
+        p1 = peopleDirectory.addPerson();
+        p1.setFirstName("Vedant");
+        p1.setLastName("Mane");
+        p1.setSSN(987654321);
+        p1.setAge(25);
+        
+        hAdd1.setStreetAddress("30 South Huntington Avenue");
+        hAdd1.setUnitNumber(3);
+        hAdd1.setCity("Boston");
+        hAdd1.setState("MA");
+        hAdd1.setZipCode(02130);
+        hAdd1.setPhoneNumber(1575655928);
+
+        p1.setHomeAddress(hAdd1);
+
+        wAdd1.setStreetAddress("360 Huntington Avenue");
+        wAdd1.setUnitNumber(205);
+        wAdd1.setCity("Boston");
+        wAdd1.setState("MA");
+        wAdd1.setZipCode(02115);
+        wAdd1.setPhoneNumber(1293791098);
+
+        p1.setWorkAddress(wAdd1);
+        
+        // Adding Person 2
+        
+        p2 = peopleDirectory.addPerson();
+        p2.setFirstName("Aditya");
+        p2.setLastName("Mitra");
+        p2.setSSN(976798320);
+        p2.setAge(24);
+        
+        hAdd2.setStreetAddress("890 Huntington Avenue");
+        hAdd2.setUnitNumber(2);
+        hAdd2.setCity("Boston");
+        hAdd2.setState("MA");
+        hAdd2.setZipCode(02115);
+        hAdd2.setPhoneNumber(1579236052);
+
+        p2.setHomeAddress(hAdd2);
+
+        wAdd2.setStreetAddress("315 Beharkis Health Science Center");
+        wAdd2.setUnitNumber(315);
+        wAdd2.setCity("Boston");
+        wAdd2.setState("MA");
+        wAdd2.setZipCode(02115);
+        wAdd2.setPhoneNumber(1923694690);
+
+        p2.setWorkAddress(wAdd2);
+        
+    }
 }
