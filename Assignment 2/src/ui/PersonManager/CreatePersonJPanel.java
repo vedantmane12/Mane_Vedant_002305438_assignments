@@ -637,6 +637,26 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             
             JOptionPane.showMessageDialog(this, "Person Profile created successfully!.", "Success", JOptionPane.INFORMATION_MESSAGE);
 
+            txtFirstName.setText("");
+            txtLastName.setText("");
+            txtSSN.setText("");
+            txtAge.setText("");
+            txtHeight.setText("");
+            txtWeight.setText("");
+
+            txtHomeSA.setText("");
+            txtHomeUnit.setText("");
+            txtHomeCity.setText("");
+            txtHomeState.setText("");
+            txtHomeZip.setText("");
+            txtHomePhone.setText("");
+
+            txtWorkSA.setText("");
+            txtWorkUnit.setText("");
+            txtWorkCity.setText("");
+            txtWorkState.setText("");
+            txtWorkZip.setText("");
+            txtWorkPhone.setText("");
         }
         
     }//GEN-LAST:event_btnCreateActionPerformed
