@@ -39,7 +39,9 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
         btnCreatePerson = new javax.swing.JButton();
         btnManagePeople = new javax.swing.JButton();
 
-        btnCreatePerson.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.GreyInline"));
+        setBackground(new java.awt.Color(153, 204, 255));
+
+        btnCreatePerson.setBackground(new java.awt.Color(255, 255, 153));
         btnCreatePerson.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         btnCreatePerson.setText("Create Person");
         btnCreatePerson.addActionListener(new java.awt.event.ActionListener() {
@@ -48,7 +50,7 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManagePeople.setBackground(javax.swing.UIManager.getDefaults().getColor("Actions.GreyInline"));
+        btnManagePeople.setBackground(new java.awt.Color(255, 255, 153));
         btnManagePeople.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         btnManagePeople.setText("List People");
         btnManagePeople.addActionListener(new java.awt.event.ActionListener() {

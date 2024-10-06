@@ -88,10 +88,13 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         lblSSN = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(153, 204, 255));
+
         lblAge.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblAge.setText(" Age");
 
         txtWeight.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtWeight.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         lblTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -112,55 +115,71 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         lblWeight.setText(" Weight");
 
         txtFirstName.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtFirstName.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         txtHeight.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtHeight.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         txtLastName.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtLastName.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
+        homeAddressJPanel.setBackground(new java.awt.Color(51, 153, 255));
         homeAddressJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Home Address"));
 
+        lblHomeSA.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeSA.setText("Street Address");
 
+        lblHomeUnit.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeUnit.setText("Unit Number");
 
+        lblHomeState.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeState.setText("State");
 
+        lblHomeCity.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeCity.setText("City");
 
+        lblHomeZip.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeZip.setText("Zip Code");
 
+        lblHomePhone.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomePhone.setText("Phone");
 
+        txtHomeSA.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtHomeSA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHomeSAActionPerformed(evt);
             }
         });
 
+        txtHomeUnit.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtHomeUnit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHomeUnitActionPerformed(evt);
             }
         });
 
+        txtHomeCity.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtHomeCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHomeCityActionPerformed(evt);
             }
         });
 
+        txtHomeState.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtHomeState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHomeStateActionPerformed(evt);
             }
         });
 
+        txtHomeZip.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtHomeZip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHomeZipActionPerformed(evt);
             }
         });
 
+        txtHomePhone.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtHomePhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHomePhoneActionPerformed(evt);
@@ -221,53 +240,68 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         );
 
         txtSSN.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtSSN.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         txtAge.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtAge.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
+        workAddressJPanel.setBackground(new java.awt.Color(51, 153, 255));
         workAddressJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Work Address"));
 
+        lblWorkSA.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkSA.setText("Street Address");
 
+        lblWorkUnit.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkUnit.setText("Unit Number");
 
+        lblWorkState.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkState.setText("State");
 
+        lblWorkCity.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkCity.setText("City");
 
+        lblWorkZip.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkZip.setText("Zip Code");
 
+        lblWorkPhone.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkPhone.setText("Phone");
 
+        txtWorkSA.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtWorkSA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtWorkSAActionPerformed(evt);
             }
         });
 
+        txtWorkUnit.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtWorkUnit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtWorkUnitActionPerformed(evt);
             }
         });
 
+        txtWorkCity.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtWorkCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtWorkCityActionPerformed(evt);
             }
         });
 
+        txtWorkState.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtWorkState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtWorkStateActionPerformed(evt);
             }
         });
 
+        txtWorkZip.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtWorkZip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtWorkZipActionPerformed(evt);
             }
         });
 
+        txtWorkPhone.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtWorkPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtWorkPhoneActionPerformed(evt);
@@ -333,6 +367,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         lblLastName.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblLastName.setText(" Last Name");
 
+        btnSave.setBackground(new java.awt.Color(51, 153, 255));
         btnSave.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btnSave.setText("SAVE");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -344,6 +379,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         lblSSN.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblSSN.setText(" Social Security Number");
 
+        btnUpdate.setBackground(new java.awt.Color(0, 153, 255));
         btnUpdate.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btnUpdate.setText("UPDATE");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {

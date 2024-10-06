@@ -81,6 +81,8 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         txtWorkPhone = new javax.swing.JTextField();
         btnCreate = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(153, 204, 255));
+
         lblTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Create Person                    ");
@@ -123,18 +125,25 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
 
         txtHeight.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
+        homeAddressJPanel.setBackground(new java.awt.Color(102, 153, 255));
         homeAddressJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Home Address"));
 
+        lblHomeSA.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeSA.setText("Street Address");
 
+        lblHomeUnit.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeUnit.setText("Unit Number");
 
+        lblHomeState.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeState.setText("State");
 
+        lblHomeCity.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeCity.setText("City");
 
+        lblHomeZip.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomeZip.setText("Zip Code");
 
+        lblHomePhone.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblHomePhone.setText("Phone");
 
         txtHomeSA.addActionListener(new java.awt.event.ActionListener() {
@@ -226,18 +235,25 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        workAddressJPanel.setBackground(new java.awt.Color(102, 153, 255));
         workAddressJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Work Address"));
 
+        lblWorkSA.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkSA.setText("Street Address");
 
+        lblWorkUnit.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkUnit.setText("Unit Number");
 
+        lblWorkState.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkState.setText("State");
 
+        lblWorkCity.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkCity.setText("City");
 
+        lblWorkZip.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkZip.setText("Zip Code");
 
+        lblWorkPhone.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         lblWorkPhone.setText("Phone");
 
         txtWorkSA.addActionListener(new java.awt.event.ActionListener() {
@@ -329,6 +345,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnCreate.setBackground(new java.awt.Color(255, 255, 153));
         btnCreate.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         btnCreate.setText("Create Person");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {

@@ -92,8 +92,11 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPane.setDividerLocation(80);
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
+        topJPanel.setBackground(new java.awt.Color(0, 102, 204));
+
         btnPersonMng.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         btnPersonMng.setText("Open Person Manager Work Area");
+        btnPersonMng.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         btnPersonMng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPersonMngActionPerformed(evt);
@@ -119,6 +122,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane.setTopComponent(topJPanel);
 
+        userProcessContainer.setBackground(new java.awt.Color(153, 204, 255));
         userProcessContainer.setLayout(new java.awt.CardLayout());
         splitPane.setRightComponent(userProcessContainer);
 

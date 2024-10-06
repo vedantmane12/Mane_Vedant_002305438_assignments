@@ -51,6 +51,9 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         tblPeople = new javax.swing.JTable();
         btnSearch = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(153, 204, 255));
+
+        btnViewDetails.setBackground(new java.awt.Color(255, 255, 153));
         btnViewDetails.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         btnViewDetails.setText("View Details");
         btnViewDetails.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +62,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDelete.setBackground(new java.awt.Color(255, 51, 51));
         btnDelete.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         btnDelete.setText("Delete Account");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +70,8 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
+
+        txtSearchBox.setSelectionColor(new java.awt.Color(255, 255, 255));
 
         lblTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -79,6 +85,9 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+
+        tblPeople.setBackground(new java.awt.Color(0, 153, 204));
         tblPeople.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -100,6 +109,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPeople);
 
+        btnSearch.setBackground(new java.awt.Color(102, 255, 102));
         btnSearch.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
