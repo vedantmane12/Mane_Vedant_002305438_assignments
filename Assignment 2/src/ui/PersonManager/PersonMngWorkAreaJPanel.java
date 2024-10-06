@@ -89,7 +89,7 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         CreatePersonJPanel panel = new CreatePersonJPanel(userProcessContainer, peopleDirectory);
-        userProcessContainer.add("CreateAccountJPanel", panel);
+        userProcessContainer.add("CreatePersonJPanel", panel);
         
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);        
@@ -98,6 +98,13 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnManagePeopleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePeopleActionPerformed
         // TODO add your handling code here:
+
+        ManagePersonJPanel panel = new ManagePersonJPanel(userProcessContainer, peopleDirectory);
+        userProcessContainer.add("ManagePersonJPanel", panel);
+        
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+
     }//GEN-LAST:event_btnManagePeopleActionPerformed
 
 

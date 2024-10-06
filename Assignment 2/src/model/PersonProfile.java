@@ -26,6 +26,11 @@ public class PersonProfile {
     
     private Date lastUpdated;
     
+    public PersonProfile() {
+        this.workAddress = new Address();
+        this.homeAddress = new Address();
+    }
+    
     public String getFirstName() {
         return firstName;
     }

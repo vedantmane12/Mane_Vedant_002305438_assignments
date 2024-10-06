@@ -589,7 +589,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 return;
             }
             
-            PersonProfile person = new PersonProfile();
+            PersonProfile person = peopleDirectory.addPerson();
             Address homeAddress = new Address();
             Address workAddress = new Address();
             

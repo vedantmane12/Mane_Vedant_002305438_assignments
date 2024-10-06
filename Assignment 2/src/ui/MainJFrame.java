@@ -18,13 +18,6 @@ import ui.PersonManager.PersonMngWorkAreaJPanel;
 public class MainJFrame extends javax.swing.JFrame {
     
     private PersonDirectory peopleDirectory;
-
-    private PersonProfile p1;
-    private PersonProfile p2;
-    private PersonProfile p3;
-    private PersonProfile p4;
-    private PersonProfile p5;
-    private PersonProfile p6;
     
     private Address hAdd1;
     private Address wAdd1;
@@ -44,6 +37,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private Address hAdd6;
     private Address wAdd6;
     
+        
     /**
      * Creates new form MainJFrame
      */
@@ -52,39 +46,27 @@ public class MainJFrame extends javax.swing.JFrame {
         // Initialize a new Person Directory
         this.peopleDirectory = new PersonDirectory();
         
-        // Add Person to the directory
-        p1 = peopleDirectory.addPerson();
-        // Add Addresses for Person 
+        // Add Addresses for Person 1
         this.hAdd1 = new Address();
         this.wAdd1 = new Address();
         
-        // Add Person to the directory
-        p2 = peopleDirectory.addPerson();
-        // Add Addresses for Person 
+        // Add Addresses for Person 2
         this.hAdd2 = new Address();
         this.wAdd2 = new Address();
+        // Add Addresses for Person 3
         
-        // Add Person to the directory
-        p3 = peopleDirectory.addPerson();
-        // Add Addresses for Person 
         this.hAdd3 = new Address();
         this.wAdd3 = new Address();
-        
-        // Add Person to the directory
-        p4 = peopleDirectory.addPerson();
-        // Add Addresses for Person 
+
+        // Add Addresses for Person 4
         this.hAdd4 = new Address();
         this.wAdd4 = new Address();
 
-        // Add Person to the directory
-        p5 = peopleDirectory.addPerson();
-        // Add Addresses for Person 
+        // Add Addresses for Person 5
         this.hAdd5 = new Address();
         this.wAdd5 = new Address();
         
-        // Add Person to the directory
-        p6 = peopleDirectory.addPerson();
-        // Add Addresses for Person 
+        // Add Addresses for Person 6
         this.hAdd6 = new Address();
         this.wAdd6 = new Address();
         
@@ -213,108 +195,110 @@ public class MainJFrame extends javax.swing.JFrame {
 
         // Adding Person 1
         
-        p1.setFirstName("Vedant");
-        p1.setLastName("Mane");
-        p1.setSSN(987654321);
-        p1.setAge(25);
-        p1.setHeight(5.8);
-        p1.setWeight(75.0);
-        p1.setLastUpdated(date);
+        PersonProfile p = peopleDirectory.addPerson();
+        p.setFirstName("Vedant");
+        p.setLastName("Mane");
+        p.setSSN(987654321);
+        p.setAge(25);
+        p.setHeight(5.8);
+        p.setWeight(75.0);
+        p.setLastUpdated(date);
         
         hAdd1.setStreetAddress("30 South Huntington Avenue");
         hAdd1.setUnitNumber(3);
         hAdd1.setCity("Boston");
         hAdd1.setState("MA");
-        hAdd1.setZipCode(02130);
+        hAdd1.setZipCode(2130);
         hAdd1.setPhoneNumber(1575655928);
         
-        p1.setHomeAddress(hAdd1);
+        p.setHomeAddress(hAdd1);
 
         wAdd1.setStreetAddress("360 Huntington Avenue");
         wAdd1.setUnitNumber(205);
         wAdd1.setCity("Boston");
         wAdd1.setState("MA");
-        wAdd1.setZipCode(02115);
+        wAdd1.setZipCode(2115);
         wAdd1.setPhoneNumber(1293791098);
 
-        p1.setWorkAddress(wAdd1);
+        p.setWorkAddress(wAdd1);
         
         // Adding Person 2
-        
-        p2 = peopleDirectory.addPerson();
-        p2.setFirstName("Aditya");
-        p2.setLastName("Mitra");
-        p2.setSSN(976798320);
-        p2.setAge(24);
-        p2.setHeight(5.6);
-        p2.setWeight(65.0);
-        p2.setLastUpdated(date);
+
+        p = peopleDirectory.addPerson();
+        p.setFirstName("Aditya");
+        p.setLastName("Mitra");
+        p.setSSN(976798320);
+        p.setAge(24);
+        p.setHeight(5.6);
+        p.setWeight(65.0);
+        p.setLastUpdated(date);
         
         hAdd2.setStreetAddress("890 Huntington Avenue");
         hAdd2.setUnitNumber(2);
         hAdd2.setCity("Boston");
         hAdd2.setState("MA");
-        hAdd2.setZipCode(02115);
+        hAdd2.setZipCode(2115);
         hAdd2.setPhoneNumber(1579236052);
 
-        p2.setHomeAddress(hAdd2);
+        p.setHomeAddress(hAdd2);
 
         wAdd2.setStreetAddress("315 Beharkis Health Science Center");
         wAdd2.setUnitNumber(315);
         wAdd2.setCity("Boston");
         wAdd2.setState("MA");
-        wAdd2.setZipCode(02115);
+        wAdd2.setZipCode(2115);
         wAdd2.setPhoneNumber(1923694690);
 
-        p2.setWorkAddress(wAdd2);
+        p.setWorkAddress(wAdd2);
         
         // Adding Person 3
         
-        p3.setFirstName("Mansi");
-        p3.setLastName("Kamble");
-        p3.setSSN(692406249);
-        p3.setAge(24);
-        p3.setHeight(5.4);
-        p3.setWeight(70.0);
-        p3.setLastUpdated(date);
+        p = peopleDirectory.addPerson();
+        p.setFirstName("Mansi");
+        p.setLastName("Kamble");
+        p.setSSN(692406249);
+        p.setAge(24);
+        p.setHeight(5.4);
+        p.setWeight(70.0);
+        p.setLastUpdated(date);
         
         hAdd3.setStreetAddress("Harvard Square");
         hAdd3.setUnitNumber(7);
         hAdd3.setCity("Cambridge");
         hAdd3.setState("MA");
-        hAdd3.setZipCode(02120);
+        hAdd3.setZipCode(2120);
         hAdd3.setPhoneNumber(1168310632);
         
-        p3.setHomeAddress(hAdd3);
+        p.setHomeAddress(hAdd3);
 
         wAdd3.setStreetAddress("203 Massachusetts Avenue");
         wAdd3.setUnitNumber(1);
         wAdd3.setCity("Boston");
         wAdd3.setState("MA");
-        wAdd3.setZipCode(02110);
+        wAdd3.setZipCode(2110);
         wAdd3.setPhoneNumber(1782367936);
 
-        p3.setWorkAddress(wAdd3);
+        p.setWorkAddress(wAdd3);
         
         // Adding Person 4
         
-        p4 = peopleDirectory.addPerson();
-        p4.setFirstName("Bob");
-        p4.setLastName("Marley");
-        p4.setSSN(163802688);
-        p4.setAge(54);
-        p4.setHeight(6.1);
-        p4.setWeight(80.0);
-        p4.setLastUpdated(date);
+        p = peopleDirectory.addPerson();
+        p.setFirstName("Bob");
+        p.setLastName("Marley");
+        p.setSSN(163802688);
+        p.setAge(54);
+        p.setHeight(6.1);
+        p.setWeight(80.0);
+        p.setLastUpdated(date);
         
         hAdd4.setStreetAddress("100 Mozart Park");
         hAdd4.setUnitNumber(10);
         hAdd4.setCity("Jamaica Plain");
         hAdd4.setState("MA");
-        hAdd4.setZipCode(02130);
+        hAdd4.setZipCode(2130);
         hAdd4.setPhoneNumber(1999900000);
 
-        p4.setHomeAddress(hAdd4);
+        p.setHomeAddress(hAdd4);
 
         wAdd4.setStreetAddress("101 Washinton Street");
         wAdd4.setUnitNumber(0);
@@ -323,64 +307,65 @@ public class MainJFrame extends javax.swing.JFrame {
         wAdd4.setZipCode(98745);
         wAdd4.setPhoneNumber(1234567890);
 
-        p4.setWorkAddress(wAdd4);
+        p.setWorkAddress(wAdd4);
         
         // Adding Person 5
         
-        p5.setFirstName("Taylor");
-        p5.setLastName("Swift");
-        p5.setSSN(923688263);
-        p5.setAge(35);
-        p5.setHeight(5.7);
-        p5.setWeight(62.0);
-        p5.setLastUpdated(date);
+        p = peopleDirectory.addPerson();
+        p.setFirstName("Taylor");
+        p.setLastName("Swift");
+        p.setSSN(923688263);
+        p.setAge(35);
+        p.setHeight(5.7);
+        p.setWeight(62.0);
+        p.setLastUpdated(date);
         
         hAdd5.setStreetAddress("32 South Huntington");
         hAdd5.setUnitNumber(3);
         hAdd5.setCity("Boston");
         hAdd5.setState("MA");
-        hAdd5.setZipCode(02140);
+        hAdd5.setZipCode(2140);
         hAdd5.setPhoneNumber(1575655929);
         
-        p5.setHomeAddress(hAdd5);
+        p.setHomeAddress(hAdd5);
 
         wAdd5.setStreetAddress("1989 Berkley Music School");
         wAdd5.setUnitNumber(22);
         wAdd5.setCity("Boston");
         wAdd5.setState("MA");
-        wAdd5.setZipCode(02110);
+        wAdd5.setZipCode(2110);
         wAdd5.setPhoneNumber(1973828789);
 
-        p5.setWorkAddress(wAdd5);
+        p.setWorkAddress(wAdd5);
         
         // Adding Person 6
         
-        p6 = peopleDirectory.addPerson();
-        p6.setFirstName("Chris");
-        p6.setLastName("Martin");
-        p6.setSSN(638290172);
-        p6.setAge(42);
-        p6.setHeight(5.9);
-        p6.setWeight(71.0);
-        p6.setLastUpdated(date);
+        p = peopleDirectory.addPerson();
+        p.setFirstName("Chris");
+        p.setLastName("Martin");
+        p.setSSN(638290172);
+        p.setAge(42);
+        p.setHeight(5.9);
+        p.setWeight(71.0);
+        p.setLastUpdated(date);
         
         hAdd6.setStreetAddress("28 Huntington Avenue");
         hAdd6.setUnitNumber(1);
         hAdd6.setCity("Boston");
         hAdd6.setState("MA");
-        hAdd6.setZipCode(02115);
+        hAdd6.setZipCode(2115);
         hAdd6.setPhoneNumber(1802338239);
 
-        p6.setHomeAddress(hAdd6);
+        p.setHomeAddress(hAdd6);
 
         wAdd6.setStreetAddress("315 Beharkis Health Science Center");
         wAdd6.setUnitNumber(315);
         wAdd6.setCity("Boston");
         wAdd6.setState("MA");
-        wAdd6.setZipCode(02115);
+        wAdd6.setZipCode(2115);
         wAdd6.setPhoneNumber(1923694690);
 
-        p6.setWorkAddress(wAdd6);
+        p.setWorkAddress(wAdd6);
         
         
     }
