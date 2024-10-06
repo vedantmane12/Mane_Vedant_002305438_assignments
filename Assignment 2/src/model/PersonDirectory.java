@@ -38,7 +38,13 @@ public class PersonDirectory {
     
     public PersonProfile search(String searchInput){
         //write search code here
-        
+        for(PersonProfile p : people){
+            if(p.getFirstName().contains(searchInput) || p.getLastName().contains(searchInput) || 
+                    p.getHomeAddress().getStreetAddress().contains(searchInput) ||
+                    p.getWorkAddress().getStreetAddress().contains(searchInput)){
+                return p;
+            }
+        }
         return null;
     }
     

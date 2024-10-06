@@ -140,7 +140,7 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         PersonMngWorkAreaJPanel panel = new PersonMngWorkAreaJPanel(userProcessContainer, peopleDirectory);
-        userProcessContainer.add("AccountMngWorkAreaJPanel", panel);
+        userProcessContainer.add("PersonMngWorkAreaJPanel", panel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

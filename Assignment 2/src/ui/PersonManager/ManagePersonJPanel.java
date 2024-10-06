@@ -157,14 +157,12 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
         
-        /*
-
         int selectedRow = tblPeople.getSelectedRow();
 
         if (selectedRow >= 0){
-            PersonProfile selectedAccount = (PersonProfile) tblPeople.getValueAt(selectedRow, 0);
+            PersonProfile selectedPerson = (PersonProfile) tblPeople.getValueAt(selectedRow, 0);
 
-            ViewPersonJPanel panel = new ViewPersonJPanel(userProcessContainer, peopleDirectory, selectedAccount);
+            ViewPersonJPanel panel = new ViewPersonJPanel(userProcessContainer, peopleDirectory, selectedPerson);
             userProcessContainer.add("ViewAccountJPanel", panel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -172,8 +170,6 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Please select a person from the list to view", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-
-        */
 
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
@@ -206,7 +202,22 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-
+        if(!txtSearchBox.getText().isBlank()){
+            String searchPerson = txtSearchBox.getText();
+            PersonProfile foundPerson = peopleDirectory.search(searchPerson);
+            if(foundPerson != null){
+                
+                ViewPersonJPanel panel = new ViewPersonJPanel(userProcessContainer, peopleDirectory, foundPerson);
+                userProcessContainer.add("ViewPersonJPanel", panel);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Person not found. Please check the details and try again", "Warning", JOptionPane.WARNING_MESSAGE);                
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter person details to view", "Warning", JOptionPane.WARNING_MESSAGE);            
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
 
@@ -221,7 +232,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtSearchBox;
     // End of variables declaration//GEN-END:variables
 
-    private void populateTable() {
+    public void populateTable() {
         DefaultTableModel model = (DefaultTableModel) tblPeople.getModel();
         model.setRowCount(0);
         
