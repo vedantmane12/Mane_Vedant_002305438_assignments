@@ -87,6 +87,8 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         btnSave = new javax.swing.JButton();
         lblSSN = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
+        txtLastUpdated = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 204, 255));
 
@@ -388,6 +390,10 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtLastUpdated.setEditable(false);
+
+        jLabel1.setText("Last Updated On");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -428,7 +434,13 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(69, 69, 69)))
+                        .addGap(69, 69, 69))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(txtLastUpdated, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(145, 145, 145)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(homeAddressJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(workAddressJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -448,7 +460,11 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(workAddressJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtLastUpdated, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblFirstName)
                             .addComponent(lblLastName))
@@ -653,6 +669,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
             person.setAge(pAge);
             person.setHeight(pHeight);
             person.setWeight(pWeight);
+            person.setLastUpdated(date);
             
             homeAddress.setStreetAddress(homeStreet);
             homeAddress.setUnitNumber(pHUnit);
@@ -675,6 +692,8 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Person updated successfully!.", "Success", JOptionPane.INFORMATION_MESSAGE);
             
             setViewMode();
+            
+            refreshTextFields();
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -689,6 +708,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JPanel homeAddressJPanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblFirstName;
     private javax.swing.JLabel lblHeight;
@@ -718,6 +738,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtHomeUnit;
     private javax.swing.JTextField txtHomeZip;
     private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtLastUpdated;
     private javax.swing.JTextField txtSSN;
     private javax.swing.JTextField txtWeight;
     private javax.swing.JTextField txtWorkCity;
@@ -749,6 +770,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         txtWorkState.setText(person.getWorkAddress().getState());
         txtWorkZip.setText(Integer.toString(person.getWorkAddress().getZipCode()));
         txtWorkPhone.setText(Integer.toString(person.getWorkAddress().getPhoneNumber()));
+        txtLastUpdated.setText(person.getLastUpdated().toString());
 
     }
 
