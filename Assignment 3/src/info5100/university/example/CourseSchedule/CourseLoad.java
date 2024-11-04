@@ -13,19 +13,22 @@ import java.util.ArrayList;
  */
 public class CourseLoad {
     String semester;
-    ArrayList<SeatAssignment> seatassignments;
+    ArrayList<SeatAssignment> seatassignments; //each represent 1 course registration
     
     public CourseLoad(String s){
         seatassignments = new ArrayList();
         semester = s;
     }
-    public SeatAssignment newSeatAssignment(CourseOffer co){
+    public SeatAssignment registerStudentInClass(CourseOffer co){
         
         Seat seat = co.getEmptySeat(); // seat linked to courseoffer
         if (seat==null) return null;
-        SeatAssignment sa = seat.newSeatAssignment(this);
+        SeatAssignment sa = seat.newSeatAssignment(this); 
         seatassignments.add(sa);  //add to students course 
+        
+        
         return sa;
+        
     }
     
     public void registerStudent(SeatAssignment sa){
