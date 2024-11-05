@@ -278,7 +278,7 @@ public class Info5001UniversityExample {
         courseload19.registerStudentInClass(courseoffer5, "B+");
         courseload20.registerStudentInClass(courseoffer6, "C");
         courseload20.registerStudentInClass(courseoffer8, "A");
-
+        
         
         for (StudentProfile sp : department.getStudentDirectory().getAllStudents()) {
             ArrayList<SeatAssignment> seatAssignments = sp.getCurrentCourseLoad().getSeatAssignments();
