@@ -25,6 +25,7 @@ import java.util.ArrayList;
  *
  * @author kal bugrara
  */
+
 public class Info5001UniversityExample {
         
 
@@ -51,8 +52,6 @@ public class Info5001UniversityExample {
         // we need the persondirectory to create persons for the different roles
         
         PersonDirectory persondirectory = department.getPersonDirectory();
-        
-        
         
 //      Create course and keep it in the course catalog
         
@@ -88,7 +87,6 @@ public class Info5001UniversityExample {
         department.addElectiveCourse(predefinedCourses[8]);
         department.addElectiveCourse(predefinedCourses[9]);
         department.addElectiveCourse(predefinedCourses[10]);
-        
         
 //      now lets schedule class to run for spring 2024        
         CourseSchedule courseschedule = department.newCourseSchedule("Spring 2025");
@@ -308,6 +306,7 @@ public class Info5001UniversityExample {
 
             System.out.printf("Total Semester GPA : %.2f\n", gpa / count);
             System.out.println("=============================================\n");
+
         }
         
     }
