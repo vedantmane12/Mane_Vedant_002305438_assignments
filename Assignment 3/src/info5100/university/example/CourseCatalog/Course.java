@@ -13,6 +13,7 @@ public class Course {
 
     String number;
     String name;
+
     int credits;
     int price = 1500; //per credit hour
 
@@ -21,6 +22,10 @@ public class Course {
         number = numb;
         credits = ch;
 
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getCOurseNumber() {

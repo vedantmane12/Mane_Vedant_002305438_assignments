@@ -19,17 +19,7 @@ public class CourseLoad {
         seatassignments = new ArrayList();
         semester = s;
     }
-    public SeatAssignment registerStudentInClass(CourseOffer co){
-        
-        Seat seat = co.getEmptySeat(); // seat linked to courseoffer
-        if (seat==null) return null;
-        SeatAssignment sa = seat.newSeatAssignment(this); 
-        seatassignments.add(sa);  //add to students course 
-        
-        
-        return sa;
-        
-    }
+    
     
     public void registerStudent(SeatAssignment sa){
         
@@ -45,8 +35,21 @@ public class CourseLoad {
         }
         return sum;
     }
-        public ArrayList<SeatAssignment> getSeatAssignments(){
+    
+    public ArrayList<SeatAssignment> getSeatAssignments(){
             return seatassignments;
         }
+        
+    public SeatAssignment registerStudentInClass(CourseOffer co){
+        
+        Seat seat = co.getEmptySeat(); // seat linked to courseoffer
+        if (seat==null) return null;
+        SeatAssignment sa = seat.newSeatAssignment(this); 
+        seatassignments.add(sa);  //add to students course 
+        
+        
+        return sa;
+        
+    }
             
 }
