@@ -10,6 +10,7 @@ import info5100.university.example.CourseCatalog.CourseCatalog;
 import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.CourseSchedule.CourseOffer;
 import info5100.university.example.CourseSchedule.CourseSchedule;
+import info5100.university.example.CourseSchedule.SeatAssignment;
 import info5100.university.example.Department.Department;
 import info5100.university.example.Persona.Faculty.FacultyDirectory;
 import info5100.university.example.Persona.Faculty.FacultyProfile;
@@ -17,6 +18,7 @@ import info5100.university.example.Persona.Person;
 import info5100.university.example.Persona.PersonDirectory;
 import info5100.university.example.Persona.StudentDirectory;
 import info5100.university.example.Persona.StudentProfile;
+import java.util.ArrayList;
 
 
 /**
@@ -50,6 +52,8 @@ public class Info5001UniversityExample {
         
         PersonDirectory persondirectory = department.getPersonDirectory();
         
+        
+        
 //      Create course and keep it in the course catalog
         
         CourseCatalog coursecatalog = department.getCourseCatalog();        
@@ -71,6 +75,20 @@ public class Info5001UniversityExample {
         for (Course course : predefinedCourses) {
             coursecatalog.newCourse(course.getName(), course.getCOurseNumber(), course.getCredits());
         }
+        
+        department.addCoreCourse(predefinedCourses[0]);
+        
+        department.addElectiveCourse(predefinedCourses[1]);
+        department.addElectiveCourse(predefinedCourses[2]);
+        department.addElectiveCourse(predefinedCourses[3]);
+        department.addElectiveCourse(predefinedCourses[4]);
+        department.addElectiveCourse(predefinedCourses[5]);
+        department.addElectiveCourse(predefinedCourses[6]);
+        department.addElectiveCourse(predefinedCourses[7]);
+        department.addElectiveCourse(predefinedCourses[8]);
+        department.addElectiveCourse(predefinedCourses[9]);
+        department.addElectiveCourse(predefinedCourses[10]);
+        
         
 //      now lets schedule class to run for spring 2024        
         CourseSchedule courseschedule = department.newCourseSchedule("Spring 2025");
@@ -112,24 +130,24 @@ public class Info5001UniversityExample {
 
 //      Create teacher for class
 
-        Person person1 = persondirectory.newPerson("Kal"); 
-        Person person2 = persondirectory.newPerson("Dino"); 
-        Person person3 = persondirectory.newPerson("Pan"); 
-        Person person4 = persondirectory.newPerson("Sahil"); 
-        Person person5 = persondirectory.newPerson("Tanmay"); 
-        Person person6 = persondirectory.newPerson("Max"); 
-        Person person7 = persondirectory.newPerson("Mario"); 
-        Person person8 = persondirectory.newPerson("Dua");
+        Person person1 = persondirectory.newPerson("001123978"); 
+        Person person2 = persondirectory.newPerson("001123237"); 
+        Person person3 = persondirectory.newPerson("001128794"); 
+        Person person4 = persondirectory.newPerson("001127385"); 
+        Person person5 = persondirectory.newPerson("001124642"); 
+        Person person6 = persondirectory.newPerson("001127483"); 
+        Person person7 = persondirectory.newPerson("001128784"); 
+        Person person8 = persondirectory.newPerson("001128937");
         
         FacultyDirectory facultydirectory = department.getFacultyDirectory();
         FacultyProfile teacher1 = facultydirectory.newFacultyProfile(person1);
         FacultyProfile teacher2 = facultydirectory.newFacultyProfile(person2);       
-        FacultyProfile teacher3 = facultydirectory.newFacultyProfile(person1);
-        FacultyProfile teacher4 = facultydirectory.newFacultyProfile(person2);       
-        FacultyProfile teacher5 = facultydirectory.newFacultyProfile(person1);
-        FacultyProfile teacher6 = facultydirectory.newFacultyProfile(person2);       
-        FacultyProfile teacher7 = facultydirectory.newFacultyProfile(person1);
-        FacultyProfile teacher8 = facultydirectory.newFacultyProfile(person2);       
+        FacultyProfile teacher3 = facultydirectory.newFacultyProfile(person3);
+        FacultyProfile teacher4 = facultydirectory.newFacultyProfile(person4);       
+        FacultyProfile teacher5 = facultydirectory.newFacultyProfile(person5);
+        FacultyProfile teacher6 = facultydirectory.newFacultyProfile(person6);       
+        FacultyProfile teacher7 = facultydirectory.newFacultyProfile(person7);
+        FacultyProfile teacher8 = facultydirectory.newFacultyProfile(person8);       
 
 
         courseoffer1.AssignAsTeacher(teacher1);//  teacher.AssignAsTeacher(courseoffer); // OR  both work
@@ -157,26 +175,26 @@ public class Info5001UniversityExample {
        
     //  Create student     
  
-        Person person11 = persondirectory.newPerson("A");  
-        Person person12 = persondirectory.newPerson("B");   
-        Person person13 = persondirectory.newPerson("C");  
-        Person person14 = persondirectory.newPerson("D");   
-        Person person15 = persondirectory.newPerson("E");  
-        Person person16 = persondirectory.newPerson("F");   
-        Person person17 = persondirectory.newPerson("G");  
-        Person person18 = persondirectory.newPerson("H");   
-        Person person19 = persondirectory.newPerson("I");  
-        Person person20 = persondirectory.newPerson("J");   
-        Person person21 = persondirectory.newPerson("K");  
-        Person person22 = persondirectory.newPerson("L");   
-        Person person23 = persondirectory.newPerson("M");  
-        Person person24 = persondirectory.newPerson("N");   
-        Person person25 = persondirectory.newPerson("O");  
-        Person person26 = persondirectory.newPerson("P");   
-        Person person27 = persondirectory.newPerson("Q");  
-        Person person28 = persondirectory.newPerson("R");   
-        Person person29 = persondirectory.newPerson("S");  
-        Person person30 = persondirectory.newPerson("T");   
+        Person person11 = persondirectory.newPerson("002305438");  
+        Person person12 = persondirectory.newPerson("002322606");   
+        Person person13 = persondirectory.newPerson("002394890");  
+        Person person14 = persondirectory.newPerson("002238946");   
+        Person person15 = persondirectory.newPerson("002375690");  
+        Person person16 = persondirectory.newPerson("002894366");   
+        Person person17 = persondirectory.newPerson("002239657");  
+        Person person18 = persondirectory.newPerson("002267832");   
+        Person person19 = persondirectory.newPerson("002738564");  
+        Person person20 = persondirectory.newPerson("002468367");   
+        Person person21 = persondirectory.newPerson("002478376");  
+        Person person22 = persondirectory.newPerson("002358967");   
+        Person person23 = persondirectory.newPerson("002835433");  
+        Person person24 = persondirectory.newPerson("002483534");   
+        Person person25 = persondirectory.newPerson("002748465");  
+        Person person26 = persondirectory.newPerson("002478398");   
+        Person person27 = persondirectory.newPerson("002467354");  
+        Person person28 = persondirectory.newPerson("002486353");   
+        Person person29 = persondirectory.newPerson("002297451");  
+        Person person30 = persondirectory.newPerson("002438568");   
         
         StudentDirectory sd = department.getStudentDirectory();
         StudentProfile student1 = sd.newStudentProfile(person11); 
@@ -220,50 +238,78 @@ public class Info5001UniversityExample {
         CourseLoad courseload17 = student17.newCourseLoad("Spring 2025"); 
         CourseLoad courseload18 = student18.newCourseLoad("Spring 2025");   
         CourseLoad courseload19 = student19.newCourseLoad("Spring 2025"); 
-        CourseLoad courseload20 = student20.newCourseLoad("Spring 2025");   
+        CourseLoad courseload20 = student20.newCourseLoad("Spring 2025");  
         
-        courseload1.registerStudentInClass(courseoffer1, "A"); 
-        courseload1.registerStudentInClass(courseoffer2, "A-");
-        courseload2.registerStudentInClass(courseoffer3, "A");
-        courseload2.registerStudentInClass(courseoffer4, "A");
-        courseload3.registerStudentInClass(courseoffer5, "A"); 
-        courseload3.registerStudentInClass(courseoffer6, "A");
-        courseload4.registerStudentInClass(courseoffer7, "A");
+        courseload1.registerStudentInClass(courseoffer1, "A");
+        courseload1.registerStudentInClass(courseoffer2, "B+");
+        courseload2.registerStudentInClass(courseoffer3, "A-");
+        courseload2.registerStudentInClass(courseoffer4, "B");
+        courseload3.registerStudentInClass(courseoffer5, "A");
+        courseload3.registerStudentInClass(courseoffer6, "C+");
+        courseload4.registerStudentInClass(courseoffer7, "B-");
         courseload4.registerStudentInClass(courseoffer8, "A");
-        courseload5.registerStudentInClass(courseoffer9, "A"); 
-        courseload5.registerStudentInClass(courseoffer10, "A");
-        courseload6.registerStudentInClass(courseoffer11, "A");
-        courseload6.registerStudentInClass(courseoffer7, "A");
-        courseload7.registerStudentInClass(courseoffer3, "A"); 
-        courseload7.registerStudentInClass(courseoffer8, "A");
-        courseload8.registerStudentInClass(courseoffer9, "A");
-        courseload8.registerStudentInClass(courseoffer2, "A");
-        courseload9.registerStudentInClass(courseoffer6, "A"); 
+        courseload5.registerStudentInClass(courseoffer9, "B");
+        courseload5.registerStudentInClass(courseoffer10, "A-");
+        courseload6.registerStudentInClass(courseoffer11, "C");
+        courseload6.registerStudentInClass(courseoffer7, "B+");
+        courseload7.registerStudentInClass(courseoffer3, "A");
+        courseload7.registerStudentInClass(courseoffer8, "B-");
+        courseload8.registerStudentInClass(courseoffer9, "A-");
+        courseload8.registerStudentInClass(courseoffer2, "C+");
+        courseload9.registerStudentInClass(courseoffer6, "B");
         courseload9.registerStudentInClass(courseoffer4, "A");
-        courseload10.registerStudentInClass(courseoffer7, "A");
-        courseload10.registerStudentInClass(courseoffer2, "A");
-        courseload11.registerStudentInClass(courseoffer7, "A"); 
-        courseload11.registerStudentInClass(courseoffer8, "A");
-        courseload12.registerStudentInClass(courseoffer3, "A");
-        courseload12.registerStudentInClass(courseoffer6, "A");
-        courseload13.registerStudentInClass(courseoffer1, "A"); 
+        courseload10.registerStudentInClass(courseoffer7, "C-");
+        courseload10.registerStudentInClass(courseoffer2, "B+");
+        courseload11.registerStudentInClass(courseoffer7, "A");
+        courseload11.registerStudentInClass(courseoffer8, "C+");
+        courseload12.registerStudentInClass(courseoffer3, "A-");
+        courseload12.registerStudentInClass(courseoffer6, "B+");
+        courseload13.registerStudentInClass(courseoffer1, "C");
         courseload13.registerStudentInClass(courseoffer8, "A");
-        courseload14.registerStudentInClass(courseoffer4, "A");
-        courseload14.registerStudentInClass(courseoffer10, "A");
-        courseload15.registerStudentInClass(courseoffer11, "A"); 
-        courseload15.registerStudentInClass(courseoffer9, "A");
+        courseload14.registerStudentInClass(courseoffer4, "B");
+        courseload14.registerStudentInClass(courseoffer10, "A-");
+        courseload15.registerStudentInClass(courseoffer11, "B+");
+        courseload15.registerStudentInClass(courseoffer9, "C-");
         courseload16.registerStudentInClass(courseoffer3, "A");
-        courseload16.registerStudentInClass(courseoffer4, "A");
-        courseload17.registerStudentInClass(courseoffer6, "A"); 
-        courseload17.registerStudentInClass(courseoffer5, "A");
-        courseload18.registerStudentInClass(courseoffer1, "A");
+        courseload16.registerStudentInClass(courseoffer4, "B+");
+        courseload17.registerStudentInClass(courseoffer6, "A-");
+        courseload17.registerStudentInClass(courseoffer5, "B");
+        courseload18.registerStudentInClass(courseoffer1, "C+");
         courseload18.registerStudentInClass(courseoffer7, "A");
-        courseload19.registerStudentInClass(courseoffer8, "A"); 
-        courseload19.registerStudentInClass(courseoffer5, "A");
-        courseload20.registerStudentInClass(courseoffer6, "A");
+        courseload19.registerStudentInClass(courseoffer8, "A-");
+        courseload19.registerStudentInClass(courseoffer5, "B+");
+        courseload20.registerStudentInClass(courseoffer6, "C");
         courseload20.registerStudentInClass(courseoffer8, "A");
-        
 
+        
+        for (StudentProfile sp : department.getStudentDirectory().getAllStudents()) {
+            ArrayList<SeatAssignment> seatAssignments = sp.getCurrentCourseLoad().getSeatAssignments();
+
+            System.out.println("=============================================");
+            System.out.println("Student ID   : " + sp.getID());
+            System.out.println("Semester     : " + sp.getCurrentCourseLoad().getSemester());  
+            System.out.println("---------------------------------------------");
+            System.out.println("Courses Enrolled:");
+            System.out.println("---------------------------------------------");
+            
+            int count = 0;
+            float gpa = 0;
+
+            for (SeatAssignment sa : seatAssignments) {
+                System.out.println("Course       : " + sa.getAssociatedCourse().getName());
+                System.out.println("Teacher      : " + sa.getCourseOffer().getFacultyProfile().getID());
+                System.out.println("Grade        : " + sa.getG());  
+                System.out.printf("GPA          : %.2f\n", sa.GetCourseStudentScore() / sa.getCreditHours());
+                System.out.printf("Tuition Fee  : $%.2f\n", Float.valueOf(sa.getAssociatedCourse().getCoursePrice()));
+                System.out.println("---------------------------------------------");
+                gpa = gpa + sa.GetCourseStudentScore() / sa.getCreditHours();
+                count = count + 1;
+            }
+
+            System.out.printf("Total Semester GPA : %.2f\n", gpa / count);
+            System.out.println("=============================================\n");
+        }
+        
     }
 
 }

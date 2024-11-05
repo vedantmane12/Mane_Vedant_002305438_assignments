@@ -60,6 +60,10 @@ public class SeatAssignment {
         this.g = g;
     }
     
+    public String getG(){
+        return g;
+    }
+    
     public boolean getLike(){
         return like;
     }

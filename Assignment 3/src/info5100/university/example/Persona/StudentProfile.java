@@ -30,6 +30,10 @@ public class StudentProfile {
     public boolean isMatch(String id) {
         return person.getPersonId().equals(id);
     }
+    
+    public String getID(){
+        return person.getPersonId();
+    }
 
     public Transcript getTranscript() {
         return transcript;

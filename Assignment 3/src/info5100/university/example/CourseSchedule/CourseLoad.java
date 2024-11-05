@@ -20,6 +20,9 @@ public class CourseLoad {
         semester = s;
     }
     
+    public ArrayList<SeatAssignment> getSeatAssignment(){
+        return seatassignments;
+    }
     
     public void registerStudent(SeatAssignment sa){
         
@@ -30,10 +33,15 @@ public class CourseLoad {
     
     public float getSemesterScore(){ //total score for a full semeter
         float sum = 0;
+        
         for (SeatAssignment sa: seatassignments){
-            sum = sum + sa.GetCourseStudentScore();
+            sum = sum + sa.GetCourseStudentScore() / sa.getCreditHours();
         }
-        return sum;
+        return sum / seatassignments.size();
+    }
+    
+    public String getSemester(){
+        return semester;
     }
     
     public ArrayList<SeatAssignment> getSeatAssignments(){
