@@ -12,6 +12,7 @@ import info5100.university.example.CourseCatalog.Course;
  * @author kal bugrara
  */
 public class SeatAssignment {
+    String g;
     float grade; //(Letter grade mappings: A=4.0, A-=3.7, B+=3.3, B=3.0, )
     Seat seat;
     boolean like; //true means like and false means not like
@@ -21,7 +22,44 @@ public class SeatAssignment {
         seat = s;
         courseload = cl;
     }
-     
+
+    public float mapGradeToGpa(String grade) {
+        float gpa;
+
+        if (grade.equalsIgnoreCase("A")) {
+            gpa = 4.0f;
+        } else if (grade.equalsIgnoreCase("A-")) {
+            gpa = 3.7f;
+        } else if (grade.equalsIgnoreCase("B+")) {
+            gpa = 3.3f;
+        } else if (grade.equalsIgnoreCase("B")) {
+            gpa = 3.0f;
+        } else if (grade.equalsIgnoreCase("B-")) {
+            gpa = 2.7f;
+        } else if (grade.equalsIgnoreCase("C+")) {
+            gpa = 2.3f;
+        } else if (grade.equalsIgnoreCase("C")) {
+            gpa = 2.0f;
+        } else if (grade.equalsIgnoreCase("C-")) {
+            gpa = 1.7f;
+        } else if (grade.equalsIgnoreCase("D+")) {
+            gpa = 1.3f;
+        } else if (grade.equalsIgnoreCase("D")) {
+            gpa = 1.0f;
+        } else if (grade.equalsIgnoreCase("F")) {
+            gpa = 0.0f;
+        } else {
+            System.out.println("Invalid grade entered.");
+            gpa = -1.0f; // Indicates an invalid grade
+        }
+
+        return gpa;
+    }
+    
+    public void setG(String g){
+        this.g = g;
+    }
+    
     public boolean getLike(){
         return like;
     }
@@ -46,6 +84,7 @@ public class SeatAssignment {
     }
     
     public float GetCourseStudentScore(){
+        grade = mapGradeToGpa(g);
         return getCreditHours()*grade;
     }
     

@@ -40,11 +40,12 @@ public class CourseLoad {
             return seatassignments;
         }
         
-    public SeatAssignment registerStudentInClass(CourseOffer co){
+    public SeatAssignment registerStudentInClass(CourseOffer co, String g){
         
         Seat seat = co.getEmptySeat(); // seat linked to courseoffer
         if (seat==null) return null;
         SeatAssignment sa = seat.newSeatAssignment(this); 
+        sa.setG(g);
         seatassignments.add(sa);  //add to students course 
         
         
