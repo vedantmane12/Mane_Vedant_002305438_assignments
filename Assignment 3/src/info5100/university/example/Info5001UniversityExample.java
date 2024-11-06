@@ -48,7 +48,7 @@ public class Info5001UniversityExample {
     
     public static void generateSemesterReport(Department department){
         System.out.println("===================================================");
-        System.out.println("Department   : " + department.getName());
+        System.out.println("Generating Report for Department of " + department.getName());
         for (StudentProfile sp : department.getStudentDirectory().getAllStudents()) {
             ArrayList<SeatAssignment> seatAssignments = sp.getCurrentCourseLoad().getSeatAssignments();
 
