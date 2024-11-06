@@ -59,6 +59,7 @@ public class Info5001UniversityExample {
             
             int count = 0;
             float gpa = 0;
+            float fees = 0;
             
 
             for (SeatAssignment sa : seatAssignments) {
@@ -70,9 +71,11 @@ public class Info5001UniversityExample {
                 System.out.printf("Fees         : $%.2f\n", Float.valueOf(sa.getAssociatedCourse().getCoursePrice()));
                 System.out.println("---------------------------------------------------");
                 gpa = gpa + sa.GetCourseStudentScore() / sa.getCreditHours();
+                fees = fees + Float.valueOf(sa.getAssociatedCourse().getCoursePrice());
                 count = count + 1;
             }
 
+            System.out.printf("Tuition Fees : $%.2f\n", Float.valueOf(fees));
             System.out.printf("Total Semester GPA : %.2f\n", gpa / count);
             System.out.println("===================================================");
 
