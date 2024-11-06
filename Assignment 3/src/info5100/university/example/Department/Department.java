@@ -87,6 +87,11 @@ public class Department {
         return coursecatalog;
 
     }
+    
+    public boolean isCoreCourse(Course course) {
+        return degree.isCoreCourse(course);
+    }
+
 
     public Course newCourse(String n, String nm, int cr) {
 

@@ -45,6 +45,41 @@ public class Info5001UniversityExample {
     
     
     */
+    
+    public static void generateSemesterReport(Department department){
+        for (StudentProfile sp : department.getStudentDirectory().getAllStudents()) {
+            ArrayList<SeatAssignment> seatAssignments = sp.getCurrentCourseLoad().getSeatAssignments();
+
+            System.out.println("===================================================");
+            System.out.println("Student ID   : " + sp.getID());
+            System.out.println("Semester     : " + sp.getCurrentCourseLoad().getSemester());  
+            System.out.println("---------------------------------------------------");
+            System.out.println("Courses Enrolled:");
+            System.out.println("---------------------------------------------------");
+            
+            int count = 0;
+            float gpa = 0;
+            
+
+            for (SeatAssignment sa : seatAssignments) {
+                String courseType = department.isCoreCourse(sa.getAssociatedCourse()) ? "Core" : "Elective";
+                System.out.println("Course       : " + sa.getAssociatedCourse().getName() + " (" + courseType + ")");
+                System.out.println("Teacher      : " + sa.getCourseOffer().getFacultyProfile().getID());
+                System.out.println("Grade        : " + sa.getG());  
+                System.out.printf("GPA          : %.2f\n", sa.GetCourseStudentScore() / sa.getCreditHours());
+                System.out.printf("Fees         : $%.2f\n", Float.valueOf(sa.getAssociatedCourse().getCoursePrice()));
+                System.out.println("---------------------------------------------------");
+                gpa = gpa + sa.GetCourseStudentScore() / sa.getCreditHours();
+                count = count + 1;
+            }
+
+            System.out.printf("Total Semester GPA : %.2f\n", gpa / count);
+            System.out.println("===================================================");
+
+        }
+    }
+
+
     public static void main(String[] args) {
         // TODO code application logic here
         
@@ -88,7 +123,8 @@ public class Info5001UniversityExample {
         department.addElectiveCourse(predefinedCourses[9]);
         department.addElectiveCourse(predefinedCourses[10]);
         
-//      now lets schedule class to run for spring 2024        
+        //      now lets schedule class to run for spring 2024        
+        
         CourseSchedule courseschedule = department.newCourseSchedule("Spring 2025");
         
         CourseOffer courseoffer1 = courseschedule.newCourseOffer("INFO 5100");
@@ -126,7 +162,7 @@ public class Info5001UniversityExample {
         courseoffer10.generatSeats(10); 
         courseoffer11.generatSeats(10); 
 
-//      Create teacher for class
+        //      Create teacher for class
 
         Person person1 = persondirectory.newPerson("001123978"); 
         Person person2 = persondirectory.newPerson("001123237"); 
@@ -171,7 +207,7 @@ public class Info5001UniversityExample {
         courseoffer11.AssignAsTeacher(teacher3);//  teacher.AssignAsTeacher(courseoffer); // OR  both work
         courseoffer11.AssignAsTeacher(teacher5);//  teacher.AssignAsTeacher(courseoffer); // OR  both work
        
-    //  Create student     
+        //  Create student     
  
         Person person11 = persondirectory.newPerson("002305438");  
         Person person12 = persondirectory.newPerson("002322606");   
@@ -279,35 +315,7 @@ public class Info5001UniversityExample {
         courseload20.registerStudentInClass(courseoffer6, "C");
         courseload20.registerStudentInClass(courseoffer8, "A");
         
-        
-        for (StudentProfile sp : department.getStudentDirectory().getAllStudents()) {
-            ArrayList<SeatAssignment> seatAssignments = sp.getCurrentCourseLoad().getSeatAssignments();
-
-            System.out.println("=============================================");
-            System.out.println("Student ID   : " + sp.getID());
-            System.out.println("Semester     : " + sp.getCurrentCourseLoad().getSemester());  
-            System.out.println("---------------------------------------------");
-            System.out.println("Courses Enrolled:");
-            System.out.println("---------------------------------------------");
-            
-            int count = 0;
-            float gpa = 0;
-
-            for (SeatAssignment sa : seatAssignments) {
-                System.out.println("Course       : " + sa.getAssociatedCourse().getName());
-                System.out.println("Teacher      : " + sa.getCourseOffer().getFacultyProfile().getID());
-                System.out.println("Grade        : " + sa.getG());  
-                System.out.printf("GPA          : %.2f\n", sa.GetCourseStudentScore() / sa.getCreditHours());
-                System.out.printf("Tuition Fee  : $%.2f\n", Float.valueOf(sa.getAssociatedCourse().getCoursePrice()));
-                System.out.println("---------------------------------------------");
-                gpa = gpa + sa.GetCourseStudentScore() / sa.getCreditHours();
-                count = count + 1;
-            }
-
-            System.out.printf("Total Semester GPA : %.2f\n", gpa / count);
-            System.out.println("=============================================\n");
-
-        }
+        generateSemesterReport(department);
         
     }
 

@@ -82,6 +82,10 @@ public class Degree {
 
     }
 
+    public boolean isCoreCourse(Course course){
+        return corelist.contains(course);
+    }
+    
     public int getTotalElectiveCoursesTaken(ArrayList<SeatAssignment> sas) {
         int electivecount = 0;
         for (SeatAssignment sa : sas) {
