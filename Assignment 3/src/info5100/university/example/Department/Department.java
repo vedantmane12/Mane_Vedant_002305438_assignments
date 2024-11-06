@@ -68,6 +68,10 @@ public class Department {
     public StudentDirectory getStudentDirectory() {
         return studentdirectory;
     }
+    
+    public String getName(){
+        return name;
+    }
 
     public CourseSchedule newCourseSchedule(String semester) {
 

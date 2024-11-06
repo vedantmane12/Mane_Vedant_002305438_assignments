@@ -47,6 +47,8 @@ public class Info5001UniversityExample {
     */
     
     public static void generateSemesterReport(Department department){
+        System.out.println("===================================================");
+        System.out.println("Department   : " + department.getName());
         for (StudentProfile sp : department.getStudentDirectory().getAllStudents()) {
             ArrayList<SeatAssignment> seatAssignments = sp.getCurrentCourseLoad().getSeatAssignments();
 
@@ -91,7 +93,7 @@ public class Info5001UniversityExample {
         
         PersonDirectory persondirectory = department.getPersonDirectory();
         
-//      Create course and keep it in the course catalog
+        // Create course and keep it in the course catalog
         
         CourseCatalog coursecatalog = department.getCourseCatalog();        
         
@@ -111,6 +113,7 @@ public class Info5001UniversityExample {
         
         for (Course course : predefinedCourses) {
             coursecatalog.newCourse(course.getName(), course.getCOurseNumber(), course.getCredits());
+            
         }
         
         department.addCoreCourse(predefinedCourses[0]);
